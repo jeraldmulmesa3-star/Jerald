@@ -1,0 +1,49 @@
+# Performance Tracking System Configuration
+
+# Collection interval in seconds
+collection_interval: 5
+
+# Maximum number of metrics to keep in history
+max_history: 1000
+
+# API Configuration
+api_host: 0.0.0.0
+api_port: 8000
+
+# Debug mode
+debug: false
+
+# Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+log_level: INFO
+
+# Database Configuration
+database:
+  type: sqlite
+  path: performance_tracking.db
+  # For PostgreSQL:
+  # type: postgresql
+  # host: localhost
+  # port: 5432
+  # name: performance_tracking
+  # user: postgres
+  # password: your_password
+
+# Alert Configuration
+alerts:
+  enabled: true
+  check_interval: 10
+
+# Default Alert Thresholds
+default_thresholds:
+  cpu_warning: 70
+  cpu_critical: 90
+  memory_warning: 75
+  memory_critical: 90
+  disk_warning: 80
+  disk_critical: 95
+
+# Export Configuration
+export:
+  enabled: true
+  default_format: json
+  directory: ./exports
